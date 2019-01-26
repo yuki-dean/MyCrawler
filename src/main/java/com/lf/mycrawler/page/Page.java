@@ -38,6 +38,7 @@ public class Page {
         }
         if (charset == null) {
             // todo 根据内容来猜测字符编码
+            charset = CharsetDetector.guessEncoding(content);
         }
         try {
             this.html = new String(content, charset);
